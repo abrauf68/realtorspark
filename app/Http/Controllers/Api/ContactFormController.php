@@ -46,8 +46,8 @@ class ContactFormController extends Controller
     {
         try {
             $validated = $request->validate([
-                'date' => 'required|date',
-                'time' => 'required|date_format:Y-m-d H:i:s',
+                'date' => 'required|string',
+                'time' => 'required|string',
             ]);
 
             $contact = Contact::find($id);
