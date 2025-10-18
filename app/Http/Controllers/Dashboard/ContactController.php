@@ -38,13 +38,13 @@ class ContactController extends Controller
                     ->addColumn('action', function ($row) {
                         $btn = '';
                         if (auth()->user()->can('view contact')) {
-                            $btn .= '<a href="' . route('dashboard.contacts.show', $row->id) . '" class="btn btn-icon btn-text-primary waves-effect waves-light rounded-pill me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Episode"><i class="ti ti-eye"></i></a>';
+                            $btn .= '<a href="' . route('dashboard.contacts.show', $row->id) . '" class="btn btn-icon btn-text-primary waves-effect waves-light rounded-pill me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Show Contact Details"><i class="ti ti-eye"></i></a>';
                         }
                         if (auth()->user()->can('delete contact')) {
                             $btn .= '<form method="POST" action="' . route('dashboard.contacts.destroy', $row->id) . '" style="display:inline-block;">
                                         ' . csrf_field() . method_field('DELETE') . '
                                         <button type="submit" class="btn btn-icon btn-text-danger waves-effect waves-light rounded-pill delete-record delete_confirmation" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                    title="Delete Episode"><i class="ti ti-trash"></i></button>
+                                                    title="Delete Contact"><i class="ti ti-trash"></i></button>
                                     </form>';
                         }
                         return $btn;
