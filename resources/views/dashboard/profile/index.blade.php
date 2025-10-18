@@ -74,12 +74,12 @@
         <div class="col-md-12">
             <div class="nav-align-top">
                 <ul class="nav nav-pills flex-column flex-sm-row mb-6 gap-2 gap-lg-0">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link profile-tab" href="#" data-target="#profile-section" data-query="profile">
                             <i class="ti-sm ti ti-user-check me-1_5"></i>
                             {{ __('Profile') }}
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link profile-tab" href="#" data-target="#account-settings-section"
                             data-query="account">
@@ -247,9 +247,9 @@
                     <div class="sk-chase-dot"></div>
                 </div>
             </div>
-            <div id="profile-section" style="display: none;">
+            {{-- <div id="profile-section" style="display: none;">
                 @include('dashboard.profile.sections.activity')
-            </div>
+            </div> --}}
             <div id="account-settings-section" style="display: none;">
                 @include('dashboard.profile.sections.setting')
             </div>
@@ -271,12 +271,12 @@
                 var activeTab = urlParams.get('tab') || 'company'; // Default to 'company'
 
                 var tabMapping = {
-                    'profile': '#profile-section',
+                    // 'profile': '#profile-section',
                     'account': '#account-settings-section',
                     'security': '#security-section',
                 };
 
-                var activeTabSelector = tabMapping[activeTab] || '#profile-section';
+                var activeTabSelector = tabMapping[activeTab] || '#account-settings-section';
 
                 $('.col-xl-8 > div').hide(); // Hide all sections initially
 

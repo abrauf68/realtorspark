@@ -306,5 +306,10 @@
     "System Settings Updated Successfully" : "تم تحديث إعدادات النظام بنجاح",
     "Email Settings Updated Successfully" : "تم تحديث إعدادات البريد الإلكتروني بنجاح",
     "Test Email Validation Error!" : "خطأ في التحقق من البريد الإلكتروني التجريبي!",
-    "Test Email Sent Successfully" : "تم إرسال البريد الإلكتروني التجريبي بنجاح"
+    "Test Email Sent Successfully" : "تم إرسال البريد الإلكتروني التجريبي بنجاح",
+    "Contact Details" : "تفاصيل الاتصال",
+    "Back to Contacts" : "العودة إلى جهات الاتصال",
+    "Phone" : "الهاتف",
+    "Created At" : "تاريخ الإنشاء",
+    "Submit at" : "تم الإرسال في"
 }

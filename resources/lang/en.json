@@ -307,5 +307,10 @@
     "System Settings Updated Successfully" : "System Settings Updated Successfully",
     "Email Settings Updated Successfully" : "Email Settings Updated Successfully",
     "Test Email Validation Error!" : "Test Email Validation Error!",
-    "Test Email Sent Successfully" : "Test Email Sent Successfully"
+    "Test Email Sent Successfully" : "Test Email Sent Successfully",
+    "Contact Details" : "Contact Details",
+    "Back to Contacts" : "Back to Contacts",
+    "Phone" : "Phone",
+    "Created At" : "Created At",
+    "Submit at" : "Submit at"
 }

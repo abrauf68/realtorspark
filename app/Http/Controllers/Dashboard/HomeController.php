@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -12,7 +14,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $totalContacts = Contact::count();
+        $todayContacts = Contact::whereDate('created_at', today())->count();
+        $thisMonthContacts = Contact::whereMonth('created_at', now()->month)->count();
+
+        // Contacts per day (last 7 days)
+        $contactsPerDay = DB::table('contacts')
+            ->select(DB::raw('DATE(created_at) as date'), DB::raw('COUNT(*) as total'))
+            ->where('created_at', '>=', now()->subDays(7))
+            ->groupBy(DB::raw('DATE(created_at)'))
+            ->orderBy('date', 'asc')
+            ->get();
+
+        return view('dashboard.index', compact('totalContacts', 'todayContacts', 'thisMonthContacts', 'contactsPerDay'));
     }
 
     /**
