@@ -84,7 +84,7 @@
             <!-- / Style Switcher-->
 
             <!-- Notification -->
-            <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
+            {{-- <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
                 <a class="nav-link btn btn-text-secondary btn-icon rounded-pill dropdown-toggle hide-arrow"
                     href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside"
                     aria-expanded="false">
@@ -119,7 +119,7 @@
                         </div>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <!--/ Notification -->
 
             <!-- User -->
@@ -157,7 +157,7 @@
                                 class="align-middle">{{ __('My Profile') }}</span>
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a class="dropdown-item" href="{{ route('profile.index', ['tab' => 'account']) }}">
                             <i class="ti ti-settings me-3 ti-md"></i><span
                                 class="align-middle">{{ __('Settings') }}</span>
@@ -171,7 +171,7 @@
                             <i class="ti ti-question-mark me-3 ti-md"></i><span
                                 class="align-middle">{{ __('FAQ') }}</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li>
                         <div class="d-grid px-2 pt-2 pb-1">
                             <a class="btn btn-sm btn-danger d-flex" style="color: #fff ;"

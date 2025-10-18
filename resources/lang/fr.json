@@ -306,5 +306,10 @@
     "System Settings Updated Successfully" : "Paramètres du système mis à jour avec succès",
     "Email Settings Updated Successfully" : "Paramètres de l'e-mail mis à jour avec succès",
     "Test Email Validation Error!" : "Erreur de validation de l'e-mail de test!",
-    "Test Email Sent Successfully" : "E-mail de test envoyé avec succès"
+    "Test Email Sent Successfully" : "E-mail de test envoyé avec succès",
+    "Contact Details" : "Détails du contact",
+    "Back to Contacts" : "Retour aux contacts",
+    "Phone" : "Téléphone",
+    "Created At" : "Créé le",
+    "Submit at" : "Soumis le"
 }
