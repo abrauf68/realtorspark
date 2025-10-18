@@ -41,6 +41,16 @@
                 </div>
 
                 <div class="col-md-6 mb-3">
+                    <label class="form-label fw-bold">{{ __('Date') }}</label>
+                    <div class="form-control bg-light">{{ $contact->date ?? '—' }}</div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-bold">{{ __('Time') }}</label>
+                    <div class="form-control bg-light">{{ $contact->time ?? '—' }}</div>
+                </div>
+
+                <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">{{ __('Created At') }}</label>
                     <div class="form-control bg-light">
                         {{ $contact->created_at->format('d M Y, h:i A') }}
