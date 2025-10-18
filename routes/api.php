@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ContactFormController;
+use App\Http\Controllers\Api\GoogleCalendarController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/contact/submit', [ContactFormController::class, 'contactSubmit']);
 Route::put('/contact/update/{id}', [ContactFormController::class, 'updateContactSchedule']);
+
+Route::get('/calendar/times/{date}', [GoogleCalendarController::class, 'getAvailableTimes']);
