@@ -18,7 +18,7 @@
             </a>
         </div>
 
-        <div class="card-body">
+        <div class="card-body mt-5">
             <div class="row mb-3">
                 <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">{{ __('Name') }}</label>
