@@ -4,7 +4,7 @@
             <span class="app-brand-logo">
                 <img height="40px" src="{{ asset(\App\Helpers\Helper::getLogoLight()) }}" alt="{{env('APP_NAME')}}">
             </span>
-            <span class="app-brand-text demo menu-text fw-bold">{{\App\Helpers\Helper::getCompanyName()}}</span>
+            <span class="app-brand-text menu-text fw-bold">{{\App\Helpers\Helper::getCompanyName()}}</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
