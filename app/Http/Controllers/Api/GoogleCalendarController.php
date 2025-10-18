@@ -14,7 +14,7 @@ class GoogleCalendarController extends Controller
     {
         $client = new Client();
         $client->setApplicationName('Google Calendar API Integration');
-        $client->setAuthConfig(public_path('uploads/my-calendar-integration-475507-bcebaaa3a542.json'));
+        $client->setAuthConfig(public_path('uploads/my-calendar-integration-475507-85a7064165f9.json'));
         $client->addScope(Calendar::CALENDAR);
         // $client->setSubject('abdul.rauf.pakistan.work@gmail.com'); // <-- your own email
         return $client;
