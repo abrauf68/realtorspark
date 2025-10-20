@@ -30,6 +30,8 @@ class FacebookHelper
                     'user_data' => [
                         'client_ip_address' => request()->ip(),
                         'client_user_agent' => request()->userAgent(),
+                        'em' => [hash('sha256', strtolower(trim($eventData['custom_fields']['email'] ?? '')))],
+                        'ph' => [hash('sha256', preg_replace('/\D+/', '', $eventData['custom_fields']['phone'] ?? ''))],
                     ],
                     'custom_data' => $eventData,
                 ]],
