@@ -31,4 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'facebook' => [
+        'pixel_id' => env('FB_PIXEL_ID'),
+        'access_token' => env('FB_ACCESS_TOKEN'),
+    ],
+
 ];

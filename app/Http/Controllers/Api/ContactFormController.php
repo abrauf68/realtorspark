@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\FacebookHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
@@ -21,6 +22,17 @@ class ContactFormController extends Controller
 
             // Create new contact record
             $contact = Contact::create($validated);
+
+            FacebookHelper::sendEvent('Lead', [
+                'currency' => 'PKR',
+                'value' => 0,
+                'content_name' => 'Contact Form Submission',
+                'custom_fields' => [
+                    'name' => $contact->name,
+                    'email' => $contact->email,
+                    'phone' => $contact->phone,
+                ]
+            ]);
 
             return response()->json([
                 'success' => true,
