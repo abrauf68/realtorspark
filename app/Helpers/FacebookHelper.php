@@ -11,10 +11,10 @@ class FacebookHelper
     {
         $pixelId = config('services.facebook.pixel_id');
         $accessToken = config('services.facebook.access_token');
+        $testCode = config('services.facebook.test_event_code'); // 👈 optional line
 
         $url = "https://graph.facebook.com/v20.0/{$pixelId}/events";
 
-        // 📘 Log: Starting event
         Log::info('📤 Sending Facebook CAPI Event', [
             'pixel_id' => $pixelId,
             'event_name' => $eventName,
@@ -36,12 +36,15 @@ class FacebookHelper
                 'access_token' => $accessToken,
             ];
 
-            // 📘 Log request payload before sending
+            // 👇 only add this if test code exists
+            if ($testCode) {
+                $payload['test_event_code'] = $testCode;
+            }
+
             Log::info('📦 Facebook CAPI Payload', $payload);
 
             $response = Http::post($url, $payload);
 
-            // 📘 Log Facebook response
             Log::info('✅ Facebook CAPI Response', [
                 'status' => $response->status(),
                 'body' => $response->json(),
@@ -49,7 +52,6 @@ class FacebookHelper
 
             return $response->json();
         } catch (\Throwable $e) {
-            // 📕 Log any exception that occurs
             Log::error('❌ Facebook CAPI Error', [
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString(),

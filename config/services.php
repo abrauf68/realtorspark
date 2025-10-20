@@ -34,6 +34,7 @@ return [
     'facebook' => [
         'pixel_id' => env('FB_PIXEL_ID'),
         'access_token' => env('FB_ACCESS_TOKEN'),
+        'test_event_code' => env('FB_TEST_EVENT_CODE'),
     ],
 
 ];
