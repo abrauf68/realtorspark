@@ -14,9 +14,8 @@ class GoogleCalendarController extends Controller
     {
         $client = new Client();
         $client->setApplicationName('Google Calendar API Integration');
-        $client->setAuthConfig(public_path('uploads/my-calendar-integration-475507-85a7064165f9.json'));
+        $client->setAuthConfig(public_path('uploads/realtor-spark-website-calendat-614c23662c4d.json'));
         $client->addScope(Calendar::CALENDAR);
-        // $client->setSubject('abdul.rauf.pakistan.work@gmail.com'); // <-- your own email
         return $client;
     }
 
@@ -32,7 +31,7 @@ class GoogleCalendarController extends Controller
 
         $startOfDay = $date . 'T00:00:00Z';
         $endOfDay = $date . 'T23:59:59Z';
-        $calendarId = 'abdul.rauf.pakistan.work@gmail.com';
+        $calendarId = 'realtorsparkdxb@gmail.com';
         $events = $service->events->listEvents($calendarId, [
             'timeMin' => $startOfDay,
             'timeMax' => $endOfDay,
