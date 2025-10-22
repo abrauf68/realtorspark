@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactSubmissionMail;
 use App\Mail\ContactScheduleMail;
+use App\Mail\ContactScheduleUserMail;
 use Illuminate\Support\Facades\Log;
 
 class ContactFormController extends Controller
@@ -88,7 +89,11 @@ class ContactFormController extends Controller
             ]);
 
             try {
+                // Mail to Admin
                 Mail::to('realtorsparkdxb@gmail.com')->send(new ContactScheduleMail($contact));
+
+                // Mail to User
+                Mail::to($contact->email)->send(new ContactScheduleUserMail($contact));
             } catch (\Throwable $th) {
                 Log::error($th->getMessage());
                 //throw $th;
