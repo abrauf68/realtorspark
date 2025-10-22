@@ -39,7 +39,8 @@ class ContactFormController extends Controller
             ]);
 
             try {
-                Mail::to('realtorsparkdxb@gmail')->send(new ContactSubmissionMail($contact));
+                Mail::to('abdul.rauf.work.001@gmail.com')->send(new ContactSubmissionMail($contact));
+                // Mail::to('realtorsparkdxb@gmail')->send(new ContactSubmissionMail($contact));
             } catch (\Throwable $th) {
                 Log::error($th->getMessage());
                 //throw $th;
@@ -88,7 +89,8 @@ class ContactFormController extends Controller
             ]);
 
             try {
-                Mail::to('realtorsparkdxb@gmail')->send(new ContactScheduleMail($contact));
+                // Mail::to('realtorsparkdxb@gmail')->send(new ContactScheduleMail($contact));
+                Mail::to('abdul.rauf.work.001@gmail.com')->send(new ContactScheduleMail($contact));
             } catch (\Throwable $th) {
                 Log::error($th->getMessage());
                 //throw $th;
