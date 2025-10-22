@@ -6,6 +6,10 @@ use App\Helpers\FacebookHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactSubmissionMail;
+use App\Mail\ContactScheduleMail;
+use Illuminate\Support\Facades\Log;
 
 class ContactFormController extends Controller
 {
@@ -33,6 +37,13 @@ class ContactFormController extends Controller
                     'phone' => $contact->phone,
                 ]
             ]);
+
+            try {
+                Mail::to('realtorsparkdxb@gmail')->send(new ContactSubmissionMail($contact));
+            } catch (\Throwable $th) {
+                Log::error($th->getMessage());
+                //throw $th;
+            }
 
             return response()->json([
                 'success' => true,
@@ -75,6 +86,13 @@ class ContactFormController extends Controller
                 'date' => $validated['date'],
                 'time' => $validated['time'],
             ]);
+
+            try {
+                Mail::to('realtorsparkdxb@gmail')->send(new ContactScheduleMail($contact));
+            } catch (\Throwable $th) {
+                Log::error($th->getMessage());
+                //throw $th;
+            }
 
             return response()->json([
                 'success' => true,
