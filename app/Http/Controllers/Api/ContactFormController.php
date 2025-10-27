@@ -25,6 +25,14 @@ class ContactFormController extends Controller
                 'company_name' => 'nullable|string|max:255',
             ]);
 
+            // ✅ Check if email already exists
+            if (Contact::where('email', $validated['email'])->exists()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'This email already exists.',
+                ], 409); // 409 Conflict
+            }
+
             // Create new contact record
             $contact = Contact::create($validated);
 
